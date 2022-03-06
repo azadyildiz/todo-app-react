@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+:root{
+  --dark-mode:lavender;
+  --bg-color:white;
+  --text-color:dimgray;
+  --main-color:darkslateblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+small{
+  font-size: .7rem;
+  font-weight: 900;
+  color: var(--main-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--dark-mode);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 18px;
+  font-weight:600;
 }
-
-.App-link {
-  color: #61dafb;
+.todo-container{
+  width: 500px;
+  min-height: 500px;
+  height: auto;
+  background-color: var(--bg-color);
+  border-radius: 30px;
+  padding: 30px;
+  color:var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer button{
+  background-color: var(--main-color);
+  outline: none;
+  border: none;
+  color: var(--bg-color);
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0 0 0 var(--main-color);
+  transition: .3s box-shadow;
+  cursor: pointer;
+}
+.footer button:hover{
+  box-shadow: 0 0 0 2px var(--main-color);
 }
