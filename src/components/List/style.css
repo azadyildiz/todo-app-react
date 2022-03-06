@@ -1,0 +1,86 @@
+:root{
+    --dark-mode:lavender;
+    --bg-color:white;
+    --text-color:dimgray;
+    --main-color:darkslateblue;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.filter-buttons{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.filter-buttons button{
+  background-color: var(--bg-color);
+  outline: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--main-color);
+  cursor: pointer;
+  border-bottom: 1px solid var(--bg-color);
+}
+.filter-buttons button:hover{
+  border-bottom: 1px solid var(--main-color);
+}
+
+.list{
+    overflow-y: scroll;
+}
+.list::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: white;
+  }
+
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--text-color);
+}
+
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-mode);
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 15px;
+}
+.list-item button{
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 var(--main-color) ;
+  transition: .3s box-shadow;
+}
+.list-item button:hover{
+  box-shadow: 0 0 0 2px var(--main-color)
+}
+.list-item span{
+  padding-left: 5px;
+}
+.list-icons{
+  transform: translateY(5%);
+  font-size: 20px;
+}
+.done{
+  text-decoration: line-through;
+  text-decoration-color: var(--main-color);
+  text-decoration-thickness: 2px;
+}
