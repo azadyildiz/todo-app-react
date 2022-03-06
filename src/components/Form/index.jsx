@@ -10,7 +10,7 @@ export default class Form extends Component {
     }
 
     errorMessage = () => {
-        return (
+        return ( // For empty input
             <div className="alert-box gold">
                 <small> You cannot add empty item!</small>
             </div>
@@ -23,13 +23,12 @@ export default class Form extends Component {
         return this.indexCounter
     }
 
-
     createNewItem = (event) => {
-        var index = this.newIndexCounter()
-        var newItem = createItemObject(event.target[0].value)
-        this.props.addItems(newItem)
+        var index = this.newIndexCounter() // create new index for item.id
+        var newItem = createItemObject(event.target[0].value) // Create new item object
+        this.props.addItems(newItem) // Send back newItem on addItems function.
 
-        function createItemObject(text) {
+        function createItemObject(text) { // Create item with input text.
             var item = { id: index, body: text, isDone: false }
             return item
         }

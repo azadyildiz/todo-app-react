@@ -12,6 +12,7 @@ export default class index extends Component {
             uncompleted: 0
         }
     }
+
     componentDidMount() { // Take data when first render
         this.setState({ items: this.props.data })
     }
@@ -19,8 +20,8 @@ export default class index extends Component {
         if (!(this.state.items === this.props.data)) { // Block the bug: Infinite render() loop
             this.setState({ items: this.props.data }) // Set props to state
         }
-
     }
+
     deleteItem = (id) => {
         this.state.items.map((item, index) => {
             if (item.id === id) { // // Compare our id and items array element id to delete correct item.
@@ -34,6 +35,7 @@ export default class index extends Component {
             items: this.deleteItem(id)
         })
     }
+
     changeIsDone = (id) => {
         this.state.items.map((item, index) => {
             if (item.id === id) { // Compare our id and items array element id to change correct item.isDone.
@@ -47,11 +49,12 @@ export default class index extends Component {
             items: this.changeIsDone(id)
         })
     }
+
     filterItems = (ctrl) => {
         if (ctrl === 0) {
             return (
                 this.state.items.map((item) => {
-                    return (
+                    return ( // Return all items
                         <div className="list-item" key={item.id}>
                             <div className="left-side">
                                 <button onClick={() => { this.done(item.id) }}><TiTick className='list-icons' /></button>
@@ -67,7 +70,7 @@ export default class index extends Component {
         else if (ctrl === 1) {
             return (
                 this.state.items.map((item) => {
-                    if (item.isDone) {
+                    if (item.isDone) { // Return completed items
                         return (
                             <div className="list-item" key={item.id}>
                                 <div className="left-side">
@@ -85,7 +88,7 @@ export default class index extends Component {
         else {
             return (
                 this.state.items.map((item) => {
-                    if (!(item.isDone)) {
+                    if (!(item.isDone)) { // Return uncompleted items
                         return (
                             <div className="list-item" key={item.id}>
                                 <div className="left-side">
@@ -101,6 +104,7 @@ export default class index extends Component {
             )
         }
     }
+
     itemCounter = (index) => {
         var completedCounter = 0
         var uncompletedCounter = 0
